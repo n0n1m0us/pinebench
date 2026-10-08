@@ -6,7 +6,13 @@ Run TradingView **Pine Script strategies locally** on your own OHLCV data. Multi
 
 Built on [PineTS](https://github.com/LuxAlgo/PineTS) (the Pine Script runtime) and [lightweight-charts](https://github.com/tradingview/lightweight-charts).
 
-<!-- ![replay](docs/replay.gif) -->
+**Strategy backtest**: run a Pine strategy, replay it bar by bar, get the full report.
+
+<p align="center"><img src="docs/strategy.gif" alt="Running a Pine strategy: bar replay with automatic entries and exits, then the full report and results" width="800"></p>
+
+**Manual replay**: place trades yourself and drag SL / TP on the chart.
+
+<p align="center"><img src="docs/manual.gif" alt="Manual replay: opening a long, dragging the stop and target, then flipping short and closing at market" width="800"></p>
 
 <p align="center"><img src="docs/architecture.png" alt="Pinebench architecture: CSV bars and a Pine strategy feed the PineTS backtest engine; a local server on :8787 sends results to the browser and fans out optimizer and replay-overlay worker pools. Everything runs on your machine." width="900"></p>
 
@@ -38,29 +44,12 @@ A sample strategy (`strategies/example-sma-cross.pine`) is included. **No market
 
 ## Data
 
-Expected CSV header (column order doesn't matter):
+Any CSV with a time column and OHLC (column order doesn't matter):
 
 ```
 ts_event,open,high,low,close,volume,symbol
 2026-10-07T13:30:00Z,25001.25,25010.00,24998.50,25007.75,812,MNQZ6
 ```
-
-Time column: `ts_event`, `time`, `timestamp`, `datetime`, `date` or `open_time`; ISO-8601 or epoch s / ms / ns. Timeframe is read from the filename (`MNQ1_5m_7y.csv` → 5m) or inferred from the timestamps. For the same asset and timeframe, the biggest file wins.
-
-Resample 1m → 5m:
-
-```bash
-node resample.mjs data/MNQ1_1m.csv data/MNQ1_5m.csv 5
-```
-
-**Databento:** download OHLCV-1m as CSV (not DBN). One file per root (e.g. MNQ only), because the front-month roll picks the highest-volume contract per day across the whole file. Note that Databento's license doesn't allow redistributing their data, so keep `data/` out of git (it already is).
-
-## Known differences from TradingView
-
-- `request.security()` with a different timeframe isn't supported. Use the chart timeframe.
-- Contract rolls are not back-adjusted, so a price gap remains at each roll.
-- In `strategy.exit()`, prefer `profit=` / `loss=` (ticks) over `limit=` / `stop=` computed from `strategy.position_avg_price`. On the entry bar that value is still `na`, and PineTS fills the exit immediately, where TradingView would ignore the order.
-- PineTS is still young. If a script behaves differently from TradingView, compare the trade lists, and report runtime bugs upstream to PineTS.
 
 ## License
 
