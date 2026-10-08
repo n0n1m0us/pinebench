@@ -8,6 +8,8 @@ Built on [PineTS](https://github.com/LuxAlgo/PineTS) (the Pine Script runtime) a
 
 <!-- ![replay](docs/replay.gif) -->
 
+<p align="center"><img src="docs/architecture.png" alt="Pinebench architecture: CSV bars and a Pine strategy feed the PineTS backtest engine; a local server on :8787 sends results to the browser and fans out optimizer and replay-overlay worker pools. Everything runs on your machine." width="900"></p>
+
 ## Features
 
 - **Your Pine, unchanged.** Drop a `.pine` / `.txt` strategy into `strategies/`, and it shows up in the UI. Script inputs become form fields.
