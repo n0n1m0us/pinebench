@@ -45,7 +45,7 @@ npm install
 npm start              # → http://127.0.0.1:8787
 ```
 
-A sample strategy (`strategies/example-sma-cross.pine`) is included. **No market data is included.** Bring your own.
+A sample strategy (`strategies/example-sma-cross.pine`) and one month of BTCUSDT 1m bars (`data/sample/`, from [Binance public data](https://data.binance.vision)) are included, so you can run a backtest right away. Add your own CSVs to `data/` for anything else.
 
 - Port: `node server.mjs 9000`
 - Data/indicators somewhere else: `BT_ROOT=/path/to/folder npm start` (scanned two levels deep for `.csv` files and Pine `indicator()` scripts).
