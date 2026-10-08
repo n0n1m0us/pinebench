@@ -1,4 +1,4 @@
-# pinets-bt
+# Pinebench
 
 Run TradingView **Pine Script strategies locally** on your own OHLCV data. Multi-year 1m backtests, a TradingView-style report, bar-by-bar replay with indicator overlays, and a parallel input optimizer. No TradingView history limits, no upload of your strategy anywhere.
 
@@ -20,7 +20,7 @@ Built on [PineTS](https://github.com/LuxAlgo/PineTS) (the Pine Script runtime) a
 Requires Node 20+.
 
 ```bash
-git clone <this repo> && cd pinets-bt
+git clone <this repo> && cd pinebench
 npm install
 # put CSVs in ./data, strategies in ./strategies
 npm start              # → http://127.0.0.1:8787

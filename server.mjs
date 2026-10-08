@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Local TradingView-style backtest UI.  usage: node server.mjs [port=8787]  → http://127.0.0.1:8787
+// Pinebench: local TradingView-style backtest UI.  usage: node server.mjs [port=8787]  → http://127.0.0.1:8787
 // Strategies: .pine/.txt files dropped in ./strategies (re-scanned on every listing).
 // Indicators and OHLC CSVs: found under this folder (e.g. ./data), or under $BT_ROOT if set.
 import { createServer } from 'node:http';

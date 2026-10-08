@@ -1,5 +1,5 @@
 {
-  "name": "pinets-bt",
+  "name": "pinebench",
   "version": "1.0.0",
   "description": "Run TradingView Pine Script strategies locally on your own OHLCV CSVs: backtest report, bar replay, parallel input optimizer.",
   "scripts": {

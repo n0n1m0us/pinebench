@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pine Backtester</title>
+<title>Pinebench</title>
 <script>try { document.documentElement.dataset.theme = JSON.parse(localStorage.getItem('theme')) ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch { document.documentElement.dataset.theme = 'light'; }</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -318,12 +318,12 @@
 <div id="chart"></div>
 <div id="mtip" class="glass" hidden></div>
 <div id="tiles" hidden></div>
-<div id="empty"><b>Pick a strategy and press Run</b>Drop .pine or .txt strategies into pinets-bt/strategies</div>
+<div id="empty"><b>Pick a strategy and press Run</b>Drop .pine or .txt strategies into pinebench/strategies</div>
 
 <div class="float logo glass"><b><i data-lucide="candlestick-chart"></i></b>Backtester<span id="ohlc" class="mono"></span></div>
 
 <div class="float glass" id="cmd">
-  <div class="seg" title="Strategies come from pinets-bt/strategies"><i data-lucide="file-code-2"></i><label><small>Strategy</small><select id="strategy"></select></label><i data-lucide="chevron-down"></i></div>
+  <div class="seg" title="Strategies come from pinebench/strategies"><i data-lucide="file-code-2"></i><label><small>Strategy</small><select id="strategy"></select></label><i data-lucide="chevron-down"></i></div>
   <span class="vr"></span>
   <div class="seg"><i data-lucide="database"></i><label><small>Asset</small><select id="data"></select></label><i data-lucide="chevron-down"></i></div>
   <span class="vr"></span>
@@ -406,7 +406,7 @@
 <aside class="float glass" id="insp">
   <h4>Strategy <small id="inCount"></small></h4>
   <div class="tabs" id="tabs"><button data-tab="paneInputs" class="on">Inputs</button><button data-tab="paneProps">Properties</button><button data-tab="paneOpt">Optimize</button></div>
-  <div class="pane" id="paneInputs"><div id="inputs"><small class="hintx">Add a strategy to pinets-bt/strategies.</small></div></div>
+  <div class="pane" id="paneInputs"><div id="inputs"><small class="hintx">Add a strategy to pinebench/strategies.</small></div></div>
   <div class="pane" id="paneProps" hidden>
     <div class="row"><span>Initial capital</span><input type="number" data-prop="initial_capital" placeholder="10,000,000" step="any"></div>
     <div class="row"><span>Commission type</span><select data-prop="commission_type"><option value="">script</option><option>percent</option><option>cash_per_contract</option><option>cash_per_order</option></select></div>
