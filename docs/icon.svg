@@ -1,21 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
-  <title>Pinebench</title>
-  <style>
-    .tile { fill: #1d1c18; }
-    .wick { stroke: #fffdf0; }
-    .up   { fill: #1d1c18; stroke: #fffdf0; }
-    .down { fill: #8b7d45; }
-    .top  { fill: #e2bd55; }
-    .bench { stroke: #fffdf0; }
-  </style>
-  <rect class="tile" width="96" height="96" rx="22"/>
-  <!-- trunk = wick -->
-  <line class="wick" x1="48" y1="12" x2="48" y2="80" stroke-width="3" stroke-linecap="round"/>
-  <!-- pine tiers = candle bodies laid sideways, widening downward -->
-  <rect class="top"  x="39" y="17" width="18" height="9" rx="2"/>
-  <rect class="up"   x="30.5" y="31.5" width="35" height="8" rx="2" stroke-width="3"/>
-  <rect class="down" x="21" y="45" width="54" height="9" rx="2"/>
-  <rect class="up"   x="13.5" y="59.5" width="69" height="8" rx="2" stroke-width="3"/>
-  <!-- the bench -->
-  <line class="bench" x1="22" y1="80" x2="74" y2="80" stroke-width="3" stroke-linecap="round"/>
+<title>Pinebench</title>
+<rect width="96" height="96" rx="22" fill="#1d1c18"/>
+<rect x="44" y="12" width="8" height="72" rx="4" fill="#fffdf0"/>
+<rect x="33" y="27" width="30" height="42" rx="6" fill="#b3a465"/>
 </svg>

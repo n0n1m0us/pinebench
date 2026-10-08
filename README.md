@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/logo.svg" alt="Pinebench" width="420"></p>
+<p align="center"><img src="docs/logo.svg" alt="Pinebench" width="360"></p>
 
 # Pinebench
 
