@@ -1,0 +1,25 @@
+{
+  "name": "pinets-bt",
+  "version": "1.0.0",
+  "description": "Run TradingView Pine Script strategies locally on your own OHLCV CSVs: backtest report, bar replay, parallel input optimizer.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node selfcheck.mjs"
+  },
+  "keywords": [
+    "pinescript",
+    "tradingview",
+    "backtest",
+    "futures",
+    "databento",
+    "pinets"
+  ],
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "dependencies": {
+    "lightweight-charts": "^5.2.1",
+    "lucide": "^0.469.0",
+    "pinets": "^0.11.0"
+  }
+}

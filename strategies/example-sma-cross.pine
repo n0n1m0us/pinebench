@@ -1,0 +1,22 @@
+//@version=6
+strategy("Example: SMA cross", overlay = true)
+
+fastLen = input.int(20, "Fast SMA", minval = 1)
+slowLen = input.int(50, "Slow SMA", minval = 2)
+stopPts = input.float(40, "Stop (points)", minval = 0.25)
+tpPts   = input.float(80, "Target (points)", minval = 0.25)
+
+fast = ta.sma(close, fastLen)
+slow = ta.sma(close, slowLen)
+
+if ta.crossover(fast, slow)
+    strategy.entry("L", strategy.long, 1)
+if ta.crossunder(fast, slow)
+    strategy.entry("S", strategy.short, 1)
+
+// profit/loss are in ticks, measured from the entry fill
+strategy.exit("xL", "L", loss = stopPts / syminfo.mintick, profit = tpPts / syminfo.mintick)
+strategy.exit("xS", "S", loss = stopPts / syminfo.mintick, profit = tpPts / syminfo.mintick)
+
+plot(fast, "Fast", color.orange)
+plot(slow, "Slow", color.blue)
