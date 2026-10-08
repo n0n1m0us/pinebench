@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/logo.svg" alt="Pinebench" width="420"></p>
+
 # Pinebench
 
 Run TradingView **Pine Script strategies locally** on your own OHLCV data. Multi-year 1m backtests, a TradingView-style report, bar-by-bar replay with indicator overlays, and a parallel input optimizer. No TradingView history limits, no upload of your strategy anywhere.
